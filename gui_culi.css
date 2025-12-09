@@ -1,17 +1,22 @@
+/* RESET BÁSICO */
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+/* ESTILOS GERAIS */
 body{
   font-family: Arial, Sans-Serif;
-  line-height: 1,6;
+  line-height: 1.6; /* CORREÇÃO: use ponto (.) para decimais */
   background-color: #f4f4f9;
   color: #333;
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
+
+/* ESTILOS DE CABEÇALHO */
 header{
   background-color: #e0f2f1;
   color: #004d40;
@@ -24,29 +29,167 @@ header h1{
   font-size: 2em;
   margin-bottom: 5px;
 }
-footer{
-  text-align: center;
-  padding: 15px 0;
-  margin-top: 30px;
-  border-top: 1px solid #ccc;
-  font-size: #666;
+hr {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 20px 0;
 }
+
+/* ESTILOS DE NAVEGAÇÃO */
 nav{
   text-align: center;
   margin: 20px 0;
   background-color: #fff;
   padding: 10px;
   border-radius: 6px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0,1);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* CORREÇÃO: A vírgula (,) estava errada */
 }
 nav a{
   text-decoration: none;
   color: #00796b;
   font-weight: bold; 
   padding: 5px 10px;
-  transition: background-color 0,3s;
+  transition: background-color 0.3s; /* CORREÇÃO: use ponto (.) para decimais */
 }
 nav a:hover{
   background-color: #b2dfdb;
   border-radius: 4px;
+}
+
+/* ========================================= */
+/* 🟢 NOVOS ESTILOS ADICIONADOS / CORRIGIDOS */
+/* ========================================= */
+
+/* ESTILO PRINCIPAL DO CONTEÚDO */
+main {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+section {
+    padding: 20px 0;
+}
+
+section h2 {
+    color: #004d40;
+    border-bottom: 2px solid #e0f2f1;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* ESTILOS DE TABELA (CORREÇÃO DA DIGITAÇÃO DE "TEBELA") */
+/* Se você usou .tebela-responsiva no HTML, o CSS DEVE USAR tebela */
+.tebela-responsiva { 
+    overflow-x: auto; /* Permite rolar em telas pequenas */
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+thead th {
+    background-color: #00796b;
+    color: #fff;
+    padding: 12px;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f0fdfc; /* Linhas alternadas para facilitar a leitura */
+}
+
+tbody tr:hover {
+    background-color: #e0f2f1;
+}
+
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+/* ESTILOS PARA CARDS DE TEMPEROS */
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+    gap: 20px;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.temperos-cards {
+    flex: 1;
+    min-width: 280px;
+    background-color: #e8f5e9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.temperos-cards h3 {
+    color: #388e3c;
+    margin-bottom: 15px;
+}
+
+.temperos-cards ul {
+    list-style: none;
+    padding: 0;
+}
+
+.temperos-cards li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #a5d6a7;
+}
+
+/* ESTILOS DE RODAPÉ */
+footer{
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 30px;
+  border-top: 1px solid #ccc;
+  font-size: 0.9em;
+  color: #666; /* CORREÇÃO: Use 'color' em vez de 'font-size' para cor */
+}
+
+/* RESPONSIVIDADE (para celular) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    header h1 {
+        font-size: 1.5em;
+    }
+    .card-container {
+        flex-direction: column;
+    }
+    /* Estilos para exibir labels da tabela em telas pequenas */
+    table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    td {
+        border: none;
+        border-bottom: 1px solid #eee; 
+        position: relative;
+        padding-left: 50%; 
+        text-align: right;
+    }
+    td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 6px;
+        font-weight: bold;
+        color: #004d40;
+        width: 45%; 
+        text-align: left;
+    }
 }
