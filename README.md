@@ -16,4 +16,4 @@ Este projeto foi criado como parte dos meus estudos de desenvolvimento Web. O ob
 - `gui_culi.css`: Estilização (Box Model e Layout).
 
 ## 👤 Autor
-Desenvolvido por Elisa0310
+Desenvolvido por Elis0310
